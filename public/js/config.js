@@ -1,6 +1,6 @@
 // OAuth client ID is a public identifier, not a secret.
-// Replace with the Web application client ID from Google Cloud Console.
-export const OAUTH_CLIENT_ID = 'REPLACE_WITH_CLIENT_ID.apps.googleusercontent.com';
+// Web application client from Cloud project drive-html-viewer-509916.
+export const OAUTH_CLIENT_ID = '416174678671-mnjuil852mrlng4g7vlcs4ekjbv77ill.apps.googleusercontent.com';
 
 export const OAUTH_SCOPES = Object.freeze([
   'https://www.googleapis.com/auth/drive.file',

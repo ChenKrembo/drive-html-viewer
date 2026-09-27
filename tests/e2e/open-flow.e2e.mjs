@@ -44,12 +44,6 @@ async function stubGoogle(page, { isPopupBlockedOnce }) {
   await page.route('https://accounts.google.com/gsi/client', (route) =>
     route.fulfill({ contentType: 'text/javascript', body: buildGisStub({ isPopupBlockedOnce }) }),
   );
-  await page.route('**/js/config.js', async (route) => {
-    const response = await route.fetch();
-    const source = await response.text();
-    const body = source.replace(/'REPLACE_WITH_CLIENT_ID[^']*'/, "'e2e-client-id.apps.googleusercontent.com'");
-    await route.fulfill({ response, body });
-  });
   await page.route('https://www.googleapis.com/drive/v3/files/**', (route) => {
     const request = route.request();
     if (request.method() === 'OPTIONS') {
