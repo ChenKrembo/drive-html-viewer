@@ -1,0 +1,15 @@
+{
+  "name": "drive-html-viewer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Google Drive \"Open with\" app that renders HTML files in a sandboxed frame",
+  "scripts": {
+    "dev": "bun scripts/dev-server.js",
+    "test": "bun test tests/*.test.js",
+    "test:e2e": "node tests/e2e/open-flow.e2e.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "1.55.0"
+  }
+}

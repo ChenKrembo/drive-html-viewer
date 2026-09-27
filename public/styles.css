@@ -1,0 +1,144 @@
+:root {
+  color-scheme: light dark;
+  --surface: #ffffff;
+  --surface-raised: #f6f8fb;
+  --border: #dde3ea;
+  --text: #1f2328;
+  --text-muted: #5f6b7a;
+  --accent: #0b57d0;
+  --accent-text: #ffffff;
+  --toolbar-height: 40px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: #131417;
+    --surface-raised: #1c1e22;
+    --border: #2d3036;
+    --text: #e6e8eb;
+    --text-muted: #9aa3af;
+    --accent: #a8c7fa;
+    --accent-text: #062e6f;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  color: var(--text);
+  font: 14px/1.5 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 var(--toolbar-height);
+  padding: 0 12px;
+  background: var(--surface-raised);
+  border-bottom: 1px solid var(--border);
+}
+
+.toolbar-title {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.toolbar-link,
+.toolbar-button {
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.toolbar-link:hover,
+.toolbar-button:hover {
+  color: var(--text);
+  border-color: var(--text-muted);
+}
+
+.panel {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px;
+  text-align: center;
+}
+
+.panel h1 {
+  margin: 8px 0 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.panel p {
+  max-width: 440px;
+  margin: 0;
+  color: var(--text-muted);
+  white-space: pre-line;
+}
+
+.primary-button {
+  margin-top: 12px;
+  padding: 9px 20px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-text);
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  filter: brightness(1.08);
+}
+
+.primary-button:focus-visible,
+.toolbar-button:focus-visible,
+.toolbar-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.viewer {
+  flex: 1;
+  min-height: 0;
+  /* Viewed files assume a white canvas unless they style themselves. */
+  background: #ffffff;
+}
+
+.viewer-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

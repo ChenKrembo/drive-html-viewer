@@ -1,0 +1,18 @@
+<!doctype html>
+<!--
+  Manual/headless probe for the sandboxed renderer. Served by the dev server at
+  /__dev/sandbox-probe.html. Writes the probe result as JSON into <pre id="result">.
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Sandbox probe</title>
+    <base href="/" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <pre id="result">pending</pre>
+    <div class="viewer" id="viewer"></div>
+    <script type="module" src="/__dev/sandbox-probe.js"></script>
+  </body>
+</html>

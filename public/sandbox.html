@@ -1,0 +1,17 @@
+<!doctype html>
+<!--
+  Render target for untrusted HTML. Loaded only inside
+  <iframe sandbox> WITHOUT allow-same-origin, so it runs in an opaque origin
+  and cannot reach the host page, its storage, or the OAuth token.
+  This document deliberately carries no CSP: srcdoc/blob frames would inherit
+  the host page's strict CSP and break the viewed file's scripts and styles.
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Sandbox</title>
+    <script src="js/sandbox-frame.js"></script>
+  </head>
+  <body></body>
+</html>

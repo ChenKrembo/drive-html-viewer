@@ -1,0 +1,8 @@
+# Cloudflare Pages response headers. Path rules must stay disjoint:
+# overlapping rules are merged and duplicate CSP headers would both apply.
+/
+  Content-Security-Policy: default-src 'none'; script-src 'self' https://accounts.google.com/gsi/client; style-src 'self' https://accounts.google.com/gsi/style; connect-src https://www.googleapis.com https://accounts.google.com/gsi/; frame-src 'self' https://accounts.google.com/gsi/; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+  Cross-Origin-Opener-Policy: same-origin-allow-popups
+  X-Content-Type-Options: nosniff
+/sandbox
+  Content-Security-Policy: sandbox allow-scripts allow-forms allow-modals allow-popups allow-downloads; frame-ancestors 'self'
